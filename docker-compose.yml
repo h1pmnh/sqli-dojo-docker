@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  php:
+    image: php:8-fpm
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: sqlidojo
+      DB_USER: dojouser
+      DB_PASSWORD: dojouser
+      FILTER_CHARACTERS: "<>"  # Replace with your desired filter characters if you want to bootstrap with these defaults
+    volumes:
+      - ./src:/var/www/html
+      - ./init-scripts:/var/init-scripts
+    depends_on:
+      mysql:
+        condition: service_healthy
+    entrypoint: ["/var/init-scripts/php-startup.sh"]
+    networks:
+      - mynetwork
+
+  mysql:
+      image: mysql:8
+      command: --default-authentication-plugin=mysql_native_password
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: sqlidojo
+        MYSQL_USER: dojouser
+        MYSQL_PASSWORD: dojouser
+      healthcheck:
+          test: mysqladmin ping -h $(hostname --ip-address || echo '127.0.0.1') -P 3306 -u root --password=root 2>&1 > /dev/null
+          start_period: 120s # a fresh start with no existing DB will take much longer
+          interval: 10s
+          timeout: 10s
+          retries: 20
+      volumes:
+        - ./mysql-data:/var/lib/mysql
+        - ./db-init-scripts:/docker-entrypoint-initdb.d
+      networks:
+        - mynetwork
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx-config:/etc/nginx/conf.d
+    depends_on:
+      php:
+        condition: service_started
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+
+volumes:
+  mysql-data:
