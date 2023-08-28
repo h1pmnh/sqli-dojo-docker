@@ -14,9 +14,20 @@
             Traditional Forms
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/lookup_person.php">GET parameter injection</a></li>
-            <li><a class="dropdown-item" href="/lookup_person_with_prefix_suffix.php">GET parameter injection in the middle of a string</a></li>
+            <li><a class="dropdown-item" href="/lookup_person.php?id=1">GET parameter injection at end of query</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_single_quotes.php?id=1">GET parameter injection with single quotes surrounding at end of query</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_midquery_injection.php?id=1">GET parameter injection with surrounding query content</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_with_prefix_suffix.php?id=a:1:a">GET parameter injection in the middle of a parameter</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Non-Traditional Forms
+          </a>
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/lookup_person_multi.php">POST multipart parameter injection</a></li>
+            <li><a class="dropdown-item" href="/json_form_input.php">JSON injection via POST parameter</a></li>
+            <li><a class="dropdown-item" href="/xml_form_input.php">XML injection via POST parameter</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -24,14 +35,15 @@
             APIs
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/json_input.php">JSON POST attribute injection</a></li>
+            <li><a class="dropdown-item" href="/json_post_body.php">JSON POST attribute injection (body)</a></li>
+            <li><a class="dropdown-item" href="/xml_post_body.php">XML POST attribute injection (body)</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/edit_filter_characters.php">Edit Filter</a>
+          <a class="nav-link" href="/edit_filter_characters.php">Edit Character Filters</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:location.href=location.href+'?&source=1'">View Source</a>
+          <a class="nav-link" href="javascript:location.href=location.href+'?&source=1'">View Source (this Page)</a>
         </li>
 
       </ul>
