@@ -39,7 +39,7 @@ function getFilterCharacters() {
 
 function dojo_filter_input($input) {
     $filterCharacters = getFilterCharacters();
-    $filterStrings= getFilterStrings();
+    $filterStrings = getFilterStrings();
 
     $orig_input = $input;
     $filtered_input = str_replace($filterCharacters, '', $input);
@@ -52,11 +52,12 @@ function dojo_filter_input($input) {
         $filtered_input = str_replace($phrase, '', $filtered_input);
     }
     if($orig_input !== $filtered_input) {
-        if(!isset($_REQUEST['silentfilter'])) {
+        if(!isset($_REQUEST['silentfilter']) && !isset($_COOKIE['silentfilter'])) {
             echo('<div class="alert alert-primary" role="alert">');
             echo("<strong>Input filtered!</strong><br/>");
             echo("Original Input: <code>".htmlspecialchars($input)."</code><br/>");
             echo("Filtered Input: <code>".htmlspecialchars($filtered_input)."</code><br/>");
+            echo('<div class="alert alert-info" role="alert">To hide this message, set a request parameter or cookie called <code>silentfilter</code> with any value.</div>');
             echo('</div>');
         }
     }
@@ -68,13 +69,12 @@ function execute_and_handle_error($fn) {
     try {
         return $fn();
     } catch (Exception $exc) {
-        // if the ERROR parameter is set
-        if(isset($_REQUEST['error'])) {
-            if($_REQUEST['error'] == 'silent') {
-                // simply stop
-                die();
-            }
+        // if the silenterror parameter is set
+        if(isset($_REQUEST['silenterror']) || isset($_COOKIE['silenterror'])) {
+            // simply stop
+            die();
         } else {
+            echo('<div class="alert alert-info" role="alert">To hide the error message below, set a request parameter or cookie called <code>silenterror</code> with any value. This will prevent for example the use of error-based SQL techniques.</div>');
             throw $exc;
         }
     }
