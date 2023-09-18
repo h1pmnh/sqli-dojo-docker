@@ -16,6 +16,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/lookup_person.php?id=1">GET parameter injection at end of query</a></li>
             <li><a class="dropdown-item" href="/lookup_person_single_quotes.php?id=1">GET parameter injection with single quotes surrounding at end of query</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_single_quotes_in_clause.php?id=1">GET parameter injection with single quotes surrounding in an IN clause</a></li>
             <li><a class="dropdown-item" href="/lookup_person_midquery_injection.php?id=1">GET parameter injection with surrounding query content</a></li>
             <li><a class="dropdown-item" href="/lookup_person_with_prefix_suffix.php?id=a:1:a">GET parameter injection in the middle of a parameter</a></li>
             <li><a class="dropdown-item" href="/show_all_people.php">GET parameter injection in ORDER BY clause</a></li>

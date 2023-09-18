@@ -34,12 +34,15 @@
                 // Insert new characters
                 $insertValues = [];
                 foreach ($newCharacters as $character) {
-                    $insertValues[] = $pdo->quote($character);
+                    if($character !== '') {
+                        $insertValues[] = $pdo->quote($character);
+                    }
                 }
-
-                // please don't try to sql inject this page :~)
-                $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
-                $pdo->exec($insertQuery);
+                if(count($insertValues)>0) {
+                    // please don't try to sql inject this page :~)
+                    $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
+                    $pdo->exec($insertQuery);
+                }
             }
 
             echo "<p>Filter characters updated successfully.</p>";

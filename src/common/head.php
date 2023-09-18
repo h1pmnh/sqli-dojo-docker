@@ -5,4 +5,7 @@
 body {
     margin: 0px 5px;
 }
+#footer {
+    font-size: 0.8em;
+}
 </style>
