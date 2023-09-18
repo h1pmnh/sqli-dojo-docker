@@ -17,14 +17,20 @@ This application is intentionally vulnerable to SQL injection and possibly other
  * From the repository root, run `docker-compose up` - after some time you will be able to access the application on [http://localhost:8080/](http://localhost:8080/).
   * Please note, the initial startup (building the MySQL database) will take some 1-2 minutes, even on a fast PC - subsequent startup will be faster.
 
-## To-Do
+# Clearing Data
 
+The database is built in the directory `mysql-data` - if you want to start over for whatever reason, just:
+
+ * Stop the running docker compose project
+ * Remove the directory
+ * Start the docker compose project
+
+## To-Do
 
 IN clause
 INSERT statement, middle parameter
 injection in stored proc invocation
 SOAP?
-multi-field injection e.g. WHERE (inj = inj2) with paren filter
 
 keyword filtering (SELECT, FROM)
 injection on error pages e.g. 500 or the like

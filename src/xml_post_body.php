@@ -50,5 +50,6 @@
         <searchCriteria><id>{nnn}</id></searchCriteria>
     </code></p>
 
+    <?php include_once('common/footer.php'); ?>
 </body>
 </html>

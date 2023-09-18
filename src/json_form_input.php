@@ -64,5 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" value="Submit">
     </form>
 
+    <?php include_once('common/footer.php'); ?>
 
 </body></html>

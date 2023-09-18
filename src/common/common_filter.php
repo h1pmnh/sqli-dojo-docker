@@ -1,6 +1,24 @@
 <?php
 require_once('db.php');
 
+function getFilterStrings() {
+    $pdo = getConnection();
+
+    if ($pdo !== null) {
+        $query = "SELECT FILTER_PHRASE FROM FILTER_PHRASE_SETUP";
+        $statement = $pdo->query($query);
+        $strings = [];
+
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $strings[] = $row['FILTER_PHRASE'];
+        }
+
+        return $strings;
+    }
+
+    return [];
+}
+
 function getFilterCharacters() {
     $pdo = getConnection();
 
@@ -21,9 +39,18 @@ function getFilterCharacters() {
 
 function dojo_filter_input($input) {
     $filterCharacters = getFilterCharacters();
+    $filterStrings= getFilterStrings();
 
     $orig_input = $input;
     $filtered_input = str_replace($filterCharacters, '', $input);
+    // Replace filter characters with an empty string
+
+    // for now we will just remove phrases in the same case as they exist, this will simulate the behavior
+    // for sqlmap and similar automated tools but of course is easier to bypass than a real WAF, which will syntactically
+    // parse the statement and filter based on that, maybe someday...
+    foreach($filterStrings as $phrase) {
+        $filtered_input = str_replace($phrase, '', $filtered_input);
+    }
     if($orig_input !== $filtered_input) {
         if(!isset($_REQUEST['silentfilter'])) {
             echo('<div class="alert alert-primary" role="alert">');
@@ -33,7 +60,7 @@ function dojo_filter_input($input) {
             echo('</div>');
         }
     }
-    // Replace filter characters with an empty string
+
     return $filtered_input;
 }
 

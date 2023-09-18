@@ -53,5 +53,6 @@
         <input type="submit" value="Submit">
     </form>
 
+    <?php include_once('common/footer.php'); ?>
 </body>
 </html>

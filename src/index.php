@@ -16,5 +16,7 @@
     <p>Also, we recommend trying different techniques, especially by hand. For example, you can easily inject a boolean query, what about the use of a <code>UNION</code>? What about a time-based query? Challenge yourself to try new techniques!</p>
     <h1>Feedback?</h1>
     <p>Please feel free to contact me via <a href="https://www.pmnh.site">My Site</a> (Twitter, GitHub, etc) if you have any feedback or suggestions!</p>
+
+    <?php include_once('common/footer.php'); ?>
 </body>
 </html>

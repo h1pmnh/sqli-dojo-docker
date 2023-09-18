@@ -42,8 +42,18 @@
             <li><a class="dropdown-item" href="/xml_post_body.php">XML POST attribute injection (body)</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/edit_filter_characters.php">Edit Character Filters</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Customize Filters
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/edit_filter_characters.php">Edit Character Filters (e.g. <code>&lt;&gt;=</code>)</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/edit_filter_strings.php">Edit String Filters (e.g. <code>AND</code>)</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:location.href=location.href+'?&source=1'">View Source (this Page)</a>

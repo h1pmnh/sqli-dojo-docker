@@ -10,7 +10,7 @@
     <h1>Lookup Person (Multipart)</h1>
     <form action="lookup_person_multi.php" method="post" enctype="multipart/form-data">
         <label for="ID">Enter ID:</label>
-        <input type="text" name="ID" id="ID">
+        <input type="text" name="id" id="id">
         <br>
         <input type="submit" value="Submit">
     </form>
@@ -57,5 +57,7 @@
         echo "<p>This page expects a POST request with a 'id' parameter in the multipart form data.</p>";
     }
     ?>
+
+<?php include_once('common/footer.php'); ?>
 </body>
 </html>

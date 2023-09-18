@@ -14,7 +14,7 @@
         }
         function addNewRow() {
             var tr = document.createElement("tr");
-            tr.innerHTML = "<td><input type='text' name='characters[]' value=''></td><td><button onclick=removeCharacter(event)>Remove</button></td>";
+            tr.innerHTML = "<td><input type='text' name='characters[]' value='' maxlength='1' size=1></td><td><button onclick=removeCharacter(event)>Remove</button></td>";
             document.getElementById('t').appendChild(tr);
         }
     </script>
@@ -22,29 +22,27 @@
     require_once('common/db.php'); // Include your database connection code
 
     if (isset($_REQUEST['characters'])) {
-        if (isset($_REQUEST['characters'])) {
-            $newCharacters = $_REQUEST['characters'];
+        $newCharacters = $_REQUEST['characters'];
 
-            $pdo = getConnection();
+        $pdo = getConnection();
 
-            if ($pdo !== null) {
-                // Clear existing data from FILTER_SETUP table
-                $pdo->exec("TRUNCATE TABLE FILTER_SETUP");
+        if ($pdo !== null) {
+            // Clear existing data from FILTER_SETUP table
+            $pdo->exec("TRUNCATE TABLE FILTER_SETUP");
 
-                if(!$newCharacters === "") {
-                    // Insert new characters
-                    $insertValues = [];
-                    foreach ($newCharacters as $character) {
-                        $insertValues[] = $pdo->quote($character);
-                    }
-
-                    // please don't try to sql inject this page :~)
-                    $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
-                    $pdo->exec($insertQuery);
+            if($newCharacters) {
+                // Insert new characters
+                $insertValues = [];
+                foreach ($newCharacters as $character) {
+                    $insertValues[] = $pdo->quote($character);
                 }
 
-                echo "<p>Filter characters updated successfully.</p>";
+                // please don't try to sql inject this page :~)
+                $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
+                $pdo->exec($insertQuery);
             }
+
+            echo "<p>Filter characters updated successfully.</p>";
         }
     }
 
@@ -59,7 +57,7 @@
         echo "<tr><th>Filter Character</th></tr>";
 
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr><td><input type='text' name='characters[]' value='" . htmlspecialchars($row['FILTER_CHARACTER']) . "'></td><td><button type=button onclick=removeCharacter(event)>Remove</button></td></tr>";
+            echo "<tr><td><input type='text' name='characters[]' value='" . htmlspecialchars($row['FILTER_CHARACTER']) . "' maxlength='1' size=1></td><td><button type=button onclick=removeCharacter(event)>Remove</button></td></tr>";
         }
 
         echo "</table>";
@@ -79,6 +77,8 @@
     echo "Other Characters to try: <code>,.</code> - challenge yourself!";
 
     ?>
+
+    <?php include_once('common/footer.php'); ?>
 
 </body>
 </html>
