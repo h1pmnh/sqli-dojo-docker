@@ -16,8 +16,8 @@
     </form>
 
     <?php
-    require_once('db.php');
-    require_once('common_filter.php');
+    require_once('common/db.php');
+    require_once('common/common_filter.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $contentType = $_SERVER['CONTENT_TYPE'];

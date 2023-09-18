@@ -18,6 +18,9 @@
             <li><a class="dropdown-item" href="/lookup_person_single_quotes.php?id=1">GET parameter injection with single quotes surrounding at end of query</a></li>
             <li><a class="dropdown-item" href="/lookup_person_midquery_injection.php?id=1">GET parameter injection with surrounding query content</a></li>
             <li><a class="dropdown-item" href="/lookup_person_with_prefix_suffix.php?id=a:1:a">GET parameter injection in the middle of a parameter</a></li>
+            <li><a class="dropdown-item" href="/show_all_people.php">GET parameter injection in ORDER BY clause</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_query_with_crlf.php?id=1">GET parameter injection with CR/LF in query</a></li>
+            <li><a class="dropdown-item" href="/lookup_person_mixed_query_injection.php?id=1">GET parameter injection with mixed parameterized query</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

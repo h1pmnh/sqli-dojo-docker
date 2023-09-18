@@ -15,7 +15,7 @@ INSERT INTO PEOPLE (first_name, last_name, email) VALUES
     ('Hassan','Al-Mansoori','hassan.al-mansoori@example.com'),
     ('Lars','Andersen','lars.andersen@example.com'),
     ('Fatima','Khan','fatima.khan@example.com'),
-    ('André','Silva','andre.silva@example.com'),
+    ('Andre','Silva','andre.silva@example.com'),
     ('Aisha','Patel','aisha.patel@example.com'),
     ('Hugo','Dubois','hugo.dubois@example.com'),
     ('Mia','Jansson','mia.jansson@example.com'),

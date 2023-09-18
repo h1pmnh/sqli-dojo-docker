@@ -10,7 +10,7 @@
     <h1>JSON API Demo</h1>
 
 <?php
-require_once('common_filter.php');
+require_once('common/common_filter.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Read the JSON input from the request body

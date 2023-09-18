@@ -12,7 +12,7 @@
     <p>This example shows a form parameter with XML format where the injection point is in the XML document.</p>
 
     <?php
-    require_once('common_filter.php');
+    require_once('common/common_filter.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xmlContent = $_REQUEST['xmlContent'];

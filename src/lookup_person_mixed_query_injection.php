@@ -26,8 +26,15 @@ if (isset($_GET['id'])) {
         // $statement->bindParam(':id', $id, PDO::PARAM_INT);
         // $statement->execute();
 
-        $query = "SELECT FIRST_NAME, LAST_NAME FROM PEOPLE WHERE id = " . $id;
-        $statement = execute_and_handle_error(function()use($pdo,$query){return $pdo->query($query);});
+        $query = "SELECT FIRST_NAME, LAST_NAME FROM PEOPLE WHERE (id = " . $id . ") and (first_name like :firstname)";
+
+        $statement = execute_and_handle_error(function()use($pdo,$query){
+            $statement = $pdo->prepare($query);
+            $first_name = '%o%';
+            $statement->bindParam(':firstname', $first_name, PDO::PARAM_STR);
+            $statement->execute();
+            return $statement;
+        });
 
         echo "<h2>People Lookup Results</h2>";
         echo "<table>";

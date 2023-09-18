@@ -12,7 +12,7 @@
     <p>This example shows POST body containing an XML document</p>
 
     <?php
-    require_once('common_filter.php');
+    require_once('common/common_filter.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xmlContent = file_get_contents('php://input');

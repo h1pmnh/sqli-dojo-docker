@@ -10,8 +10,8 @@
     <h1>Lookup Person (GET) with arg surrounded by single quotes</h1>
 
 <?php
-require_once('db.php');
-require_once('common_filter.php');
+require_once('common/db.php');
+require_once('common/common_filter.php');
 
 if (isset($_GET['id'])) {
     // this would ensure only an integer is passed

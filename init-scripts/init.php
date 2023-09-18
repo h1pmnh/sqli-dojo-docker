@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/html/db.php');
+require_once('/var/www/html/common/db.php');
 
 $filterCharacters = $_ENV['FILTER_CHARACTERS'];
 

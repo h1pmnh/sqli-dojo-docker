@@ -1,3 +1,4 @@
+<?php include_once('common/view_source.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +19,11 @@
         }
     </script>
     <?php
-    require_once('db.php'); // Include your database connection code
+    require_once('common/db.php'); // Include your database connection code
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['characters'])) {
-            $newCharacters = $_POST['characters'];
+    if (isset($_REQUEST['characters'])) {
+        if (isset($_REQUEST['characters'])) {
+            $newCharacters = $_REQUEST['characters'];
 
             $pdo = getConnection();
 
@@ -30,14 +31,17 @@
                 // Clear existing data from FILTER_SETUP table
                 $pdo->exec("TRUNCATE TABLE FILTER_SETUP");
 
-                // Insert new characters
-                $insertValues = [];
-                foreach ($newCharacters as $character) {
-                    $insertValues[] = $pdo->quote($character);
-                }
+                if(!$newCharacters === "") {
+                    // Insert new characters
+                    $insertValues = [];
+                    foreach ($newCharacters as $character) {
+                        $insertValues[] = $pdo->quote($character);
+                    }
 
-                $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
-                $pdo->exec($insertQuery);
+                    // please don't try to sql inject this page :~)
+                    $insertQuery = "INSERT INTO FILTER_SETUP (FILTER_CHARACTER) VALUES (" . implode("), (", $insertValues) . ")";
+                    $pdo->exec($insertQuery);
+                }
 
                 echo "<p>Filter characters updated successfully.</p>";
             }
@@ -65,6 +69,15 @@
     } else {
         echo "<p>Database connection error.</p>";
     }
+
+    echo "<h2>Filter Suggestions</h2>";
+    echo "<a href='edit_filter_characters.php?characters[]='>None</a>: <code></code><br/>";
+    echo "<a href='edit_filter_characters.php?characters[]=%3c&characters[]=%3e'>Default</a>: <code>&lt;&gt;</code><br/>";
+    echo "<a href='edit_filter_characters.php?characters[]=%3c&characters[]=%3e&characters[]=%20&characters[]=%3d&characters[]=%2b&characters[]=%7c'>Hard</a>: Default + <code>=|+(space)</code><br/>";
+    echo "<a href='edit_filter_characters.php?characters[]=%3c&characters[]=%3e&characters[]=%20&characters[]=%3d&characters[]=%2b&characters[]=%7c&characters[]=(&characters[]=)&characters[]=%27&characters[]=%22'>Very Hard</a>: Hard + <code>()'&quot;</code><br/>";
+    echo "<br/>";
+    echo "Other Characters to try: <code>,.</code> - challenge yourself!";
+
     ?>
 
 </body>

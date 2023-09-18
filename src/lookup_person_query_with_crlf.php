@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lookup Person (GET)</title>
+    <title>Lookup Person (GET) with CR/LF in Query</title>
     <?php include_once('common/head.php'); ?>
 </head>
 <body>
     <?php include_once('common/nav.php'); ?>
-    <h1>Lookup Person (GET)</h1>
+    <h1>Lookup Person (GET) with CR/LF in Query</h1>
 
 <?php
 require_once('common/db.php');
@@ -26,7 +26,8 @@ if (isset($_GET['id'])) {
         // $statement->bindParam(':id', $id, PDO::PARAM_INT);
         // $statement->execute();
 
-        $query = "SELECT FIRST_NAME, LAST_NAME FROM PEOPLE WHERE id = " . $id;
+        // apparently in mysql \r\n does not stop the -- comment from ignoring it?
+        $query = "SELECT FIRST_NAME, LAST_NAME FROM PEOPLE WHERE (id = " . $id . ") \r\norder by LAST_NAME";
         $statement = execute_and_handle_error(function()use($pdo,$query){return $pdo->query($query);});
 
         echo "<h2>People Lookup Results</h2>";
