@@ -12,6 +12,10 @@ Please note, this application is created for educational purposes only.
  * Do not perform SQL injection or similar attacks on targets that you do not have explicit permission to attack, either through a vulnerability disclosure program or a penetration testing agreement.
  * Testing targets which you do not have permission to attack could be against the law and in many countries end up in severe legal or civil trouble.
 
+# License
+
+We are licensing this under GPL v3, specifically to disallow commercial use (i.e. someone taking this code and creating a paid service, which is not our intention for this project and is expressly forbidden without permission).
+
 # Requirements
 
  * Docker
