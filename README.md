@@ -1,6 +1,6 @@
 # sqli-dojo-docker
 
-A demo PHP application by [https://www.pmnh.site](@pmnh) used to exercise SQL injection techniques in a safe, local Docker environment. The purpose of this application is to allow ethical security researchers to test their skills in a variety of real-world scenarios including different payload types and injection points, with the option to apply restrictions simulating WAF or server-side filtering. We've based many of these scenarios and suggested server-side filters on actual scenarios found in many hundreds of SQL injections found during bug bounty and penetration testing. We hope you find this helpful and encourage your feedback and/or praise, either privately or publicly.
+A demo PHP application by [@pmnh](https://www.pmnh.site) used to exercise SQL injection techniques in a safe, local Docker environment. The purpose of this application is to allow ethical security researchers to test their skills in a variety of real-world scenarios including different payload types and injection points, with the option to apply restrictions simulating WAF or server-side filtering. We've based many of these scenarios and suggested server-side filters on actual scenarios found in many hundreds of SQL injections found during bug bounty and penetration testing. We hope you find this helpful and encourage your feedback and/or praise, either privately or publicly.
 
 # Obligatory WARNING
 
@@ -69,15 +69,20 @@ Please use the Github issue tracker to report issues with the container, or make
 Please *do not* use the issue tracker to ask for help on exploiting SQL injections, such issues will be closed immediately without response. Instead, we would encourage asking your scenario in a community where you are more likely to get many eyeballs, either on Twitter/X or one of the many suitable Discord servers that cover this type of issue. Feel free to reference our project and any specific configurations when asking for help in these other forums.
 
 ## To-Do
-INSERT statement, middle parameter
-injection in stored proc invocation
-SOAP?
 
-injection on error pages e.g. 500 or the like
+These aren't done yet!
 
-character limit e.g. 64 characters
+ * INSERT statement, middle parameter
+ * injection in stored proc invocation
+ * Real SOAP
+ * Injection on error pages e.g. 500 or the like
+ * Character limit e.g. 64 characters
+ * 2nd order into PDF, into CSV, into ZIP?
+ * case sensitive / insensitive
+ * add a docker-compose configuration with mod_security
+ * header-based injection
+ * cookie-based injection
 
-2nd order into PDF, into CSV, into ZIP?
 
 
 
