@@ -28,7 +28,7 @@ services:
         MYSQL_USER: dojouser
         MYSQL_PASSWORD: dojouser
       healthcheck:
-          test: mysqladmin ping -h $(hostname --ip-address || echo '127.0.0.1') -P 3306 -u root --password=root 2>&1 > /dev/null
+          test: mysqladmin ping -h $$(hostname --ip-address || echo '127.0.0.1') -P 3306 -u root --password=root 2>&1 > /dev/null
           start_period: 120s # a fresh start with no existing DB will take much longer
           interval: 10s
           timeout: 10s
