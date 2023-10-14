@@ -24,7 +24,7 @@ We are licensing this under GPL v3, specifically to disallow commercial use (i.e
 # Getting Started - Docker
 
  * Clone the repository
- * From the repository root, run `docker-compose up` - after some time you will be able to access the application on [http://localhost:8080/](http://localhost:8080/).
+ * From the repository root, run `docker compose up` - after some time you will be able to access the application on [http://localhost:8080/](http://localhost:8080/).
   * Please note, the initial startup (building the MySQL database) will take some 1-2 minutes, even on a fast PC - subsequent startup will be faster.
 
 # Clearing Data
