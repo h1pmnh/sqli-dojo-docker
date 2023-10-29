@@ -1,14 +1,4 @@
-<?php include_once('common/view_source.php'); ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@pmnh's SQL Injection Dojo</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>Welcome to the SQL Injection Dojo!</h1>
+<?php include_once('common/common.php'); do_header("Welcome to the SQL Injection Dojo", "Home"); ?>
     <p>The purpose of this site is to provide you a variety of common SQL injection scenarios with the option to configure a server-side filter that allows you to test your skills with SQL injection including with character filtering in place. The purpose of these tests is not to be difficult, but to provide you the opportunity to practice!</p>
     <p>You have the option to adjust the filter characters globally if you wish, or remove them altogether.</p>
     <h1>How to Use</h1>

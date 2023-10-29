@@ -3,8 +3,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <style type="text/css">
-body {
-}
 #footer {
     font-size: 0.8em;
 }
@@ -12,21 +10,6 @@ body {
 
 
 <script type="text/javascript">
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
     function changeTheme(theme, cookie=true) {
       if (theme === 'dark') {
         document.documentElement.setAttribute('data-bs-theme','dark');
@@ -72,6 +55,4 @@ body {
     window.addEventListener('DOMContentLoaded', () => {
         readThemePreference();
     });
-
-
 </script>

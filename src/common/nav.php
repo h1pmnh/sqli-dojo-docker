@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-2">
   <div class="container-fluid px-0">
     <a class="navbar-brand" href="#">SQLi Dojo</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
