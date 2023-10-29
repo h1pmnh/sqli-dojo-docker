@@ -24,7 +24,7 @@ We are licensing this under GPL v3, specifically to disallow commercial use (i.e
 # Getting Started - Docker
 
  * Clone the repository
- * From the repository root, run `docker compose up` - after some time you will be able to access the application on [http://localhost:8080/](http://localhost:8080/).
+ * From the repository root, run `docker compose up` - after some time you will be able to access the application on [http://localhost:8081/](http://localhost:8081/). (Note we use port 8081 to not conflict with Burp Proxy's default of 8080 and make it easier for beginners).
   * Please note, the initial startup (building the MySQL database) will take some 1-2 minutes, even on a fast PC - subsequent startup will be faster.
 
 # Clearing Data
@@ -83,9 +83,7 @@ These aren't done yet!
  * header-based injection
  * cookie-based injection
 
-Other enhancements
-
- *
+Other enhancements (meta)
 
 For the challenges, try to mention a goal, for example:
 - List all the users (maybe a flag as hidden user)
