@@ -1,13 +1,4 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>XML Input via API (POST Body)</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-<?php include_once('common/nav.php'); ?>
-    <h1>XML Input via API (POST Body)</h1>
+<?php include_once('common/common.php'); do_header("XML POST Attribute Injection (Body)", "APIs"); ?>
 
     <p>This example shows POST body containing an XML document</p>
 

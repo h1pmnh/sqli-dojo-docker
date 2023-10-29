@@ -83,6 +83,17 @@ These aren't done yet!
  * header-based injection
  * cookie-based injection
 
+Other enhancements
 
+ *
 
+For the challenges, try to mention a goal, for example:
+- List all the users (maybe a flag as hidden user)
+- Discover other tables (maybe putting a kind of flag in another table)
+- Read system file (ex /etc/passwd or a flag)
+- Execute system commands and retrieve the flag
+It is good that you put the sqlmap command, but it would be even better if you put some manual hints as well. Like this people will practice their manual skills instead of automated tools.
+
+I like the concept so far. Maybe in some future version there could be a page like in DVWA to change the settings via a drop-down.
+For example, on one page it tells a user how to 'hide an error message' by setting a param/cookie for silenterror with a value. That could automatically be done in some 'settings' page based on what 'difficulty level' a user has the SQLi Dojo on.
 

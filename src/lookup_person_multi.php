@@ -1,13 +1,5 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lookup Person (Multipart)</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>Lookup Person (Multipart)</h1>
+<?php include_once('common/common.php'); do_header("POST Multipart Parameter Injection", "Non-Traditional Forms"); ?>
+
     <form action="lookup_person_multi.php" method="post" enctype="multipart/form-data">
         <label for="ID">Enter ID:</label>
         <input type="text" name="id" id="id">
@@ -16,8 +8,6 @@
     </form>
 
     <?php
-    require_once('common/db.php');
-    require_once('common/common_filter.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $contentType = $_SERVER['CONTENT_TYPE'];

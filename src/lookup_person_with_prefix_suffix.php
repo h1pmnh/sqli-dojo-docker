@@ -1,17 +1,6 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lookup Person (GET)</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>Lookup Person (GET)</h1>
+<?php include_once('common/common.php'); do_header("GET Parameter Injection in the Middle of a Parameter", "Traditional Forms"); ?>
 
 <?php
-require_once('common/db.php');
-require_once('common/common_filter.php');
 
 if (isset($_GET['id'])) {
     // $id = intval($_GET['id']);

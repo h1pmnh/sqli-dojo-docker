@@ -1,18 +1,8 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>XML Input via Form Parameter (POST)</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-<?php include_once('common/nav.php'); ?>
-    <h1>XML Input via Form Parameter (POST)</h1>
+<?php include_once('common/common.php'); do_header("XML POST via Form Parameter", "Non-Traditional Forms"); ?>
 
     <p>This example shows a form parameter with XML format where the injection point is in the XML document.</p>
 
     <?php
-    require_once('common/common_filter.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xmlContent = $_REQUEST['xmlContent'];

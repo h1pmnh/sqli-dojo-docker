@@ -42,7 +42,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - "8081:80" # we use port 8081 so it doesn't conflict with burp proxy defaults
     volumes:
       - ./src:/var/www/html
       - ./nginx-config:/etc/nginx/conf.d

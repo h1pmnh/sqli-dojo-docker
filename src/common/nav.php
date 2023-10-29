@@ -1,9 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid px-0">
     <a class="navbar-brand" href="#">SQLi Dojo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -57,10 +54,35 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:location.href=location.href+'?&source=1'">View Source (this Page)</a>
+          <a class="nav-link" href="javascript:window.open(location.href+'?&source=1','_blank')">View Source (this Page)</a>
         </li>
-
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Theme
+            </a>
+          <ul class="dropdown-menu dropdown-menu-end" >
+            <li">
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" onclick="changeTheme('light');">
+              <i class="bi bi-sun"></i>
+              &nbsp;Light
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" onclick="changeTheme('dark');">
+              <i class="bi bi-moon"></i>
+              &nbsp;Dark
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" onclick="changeTheme('auto');">
+              <i class="bi bi-circle-half"></i>
+              &nbsp;Auto
+              </button>
+            </li>
+          </ul>
+        </li>
       </ul>
+
     </div>
   </div>
 </nav>

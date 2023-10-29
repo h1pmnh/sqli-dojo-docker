@@ -1,16 +1,6 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>JSON API Demo</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>JSON API Demo</h1>
+<?php include_once('common/common.php'); do_header("JSON POST Attribute Injection (Body)", "APIs"); ?>
 
 <?php
-require_once('common/common_filter.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Read the JSON input from the request body

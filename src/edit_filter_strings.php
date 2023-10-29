@@ -1,13 +1,5 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Filter Strings Management</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>Filter String Management</h1>
+<?php include_once('common/common.php'); do_header("Filter Strings Management", "Customize Filters"); ?>
+
     <p>Note: this is a naive filtering which is using a simple character and case match, intended to simulate a WAF. Real WAFs employ SQL parsing and smarter filtering. Perhaps someday someone will contribute something smarter to this project!</p>
     <script>
         function removeString(e) {
@@ -20,7 +12,6 @@
         }
     </script>
     <?php
-    require_once('common/db.php'); // Include your database connection code
 
     if (isset($_REQUEST['strings'])) {
         $newstrings = $_REQUEST['strings'];

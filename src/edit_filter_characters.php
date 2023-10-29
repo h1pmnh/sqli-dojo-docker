@@ -1,13 +1,5 @@
-<?php include_once('common/view_source.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Filter Characters Management</title>
-    <?php include_once('common/head.php'); ?>
-</head>
-<body>
-    <?php include_once('common/nav.php'); ?>
-    <h1>Filter Characters Management</h1>
+<?php include_once('common/common.php'); do_header("Filter Characters Management", "Customize Filters"); ?>
+
     <script>
         function removeCharacter(e) {
             e.currentTarget.parentElement.parentElement.remove();
@@ -19,7 +11,6 @@
         }
     </script>
     <?php
-    require_once('common/db.php'); // Include your database connection code
 
     if (isset($_REQUEST['characters'])) {
         $newCharacters = $_REQUEST['characters'];
