@@ -21,19 +21,22 @@ We are licensing this under GPL v3, specifically to disallow commercial use (i.e
  * Docker
  * Docker Compose v2
 
-# Getting Started - Docker
+Please note, we have tested this on Windows and Linux, if you encounter any platform-specific issues please open a GitHub issue with whatever information you have.
 
- * Clone the repository
+# Getting Up and Running
+
+ * Clone this repository.
  * From the repository root, run `docker compose up` - after some time you will be able to access the application on [http://localhost:8081/](http://localhost:8081/). (Note we use port 8081 to not conflict with Burp Proxy's default of 8080 and make it easier for beginners).
   * Please note, the initial startup (building the MySQL database) will take some 1-2 minutes, even on a fast PC - subsequent startup will be faster.
+ * Browse the application and start trying to perform SQL injection on the pages you find.
 
-# Clearing Data
+# Scenarios
 
-The database is built in the directory `mysql-data` - if you want to start over for whatever reason, just:
+The scenarios built into the dojo are generally grouped into the following categories:
 
- * Stop the running docker compose project
- * Remove the directory
- * Start the docker compose project
+ * Traditional Forms - form-based GET/POST type applications with a variety of injection points and injection types
+ * Non-Traditional Forms - forms with payloads that are unusual or nested, usually requiring some tweaks or advanced sqlmap usage to get a simple injection working
+ * APIs - API-like interactions which are intended to represent behavior that emulates typical APIs - note that the implementations may not exactly match a real API e.g. our "SOAP" example is not a full SOAP implementation
 
 # Filters
 
@@ -43,13 +46,13 @@ The application allows you to (optionally) configure a set of characters (such a
 
 We encourage you to add filters that block certain techniques and force you to consider others, for example try to block `SLEEP` to prevent time-based SQL injection. Block `;` to prevent stacked queries! The options are limited only by your imagination and creativity, and desire to experience more challenging scenarios.
 
-# Scenarios
+# Clearing Data
 
-The scenarios built into the dojo are generally grouped into the following categories:
+The database is built in the directory `mysql-data` - if you want to start over for whatever reason, just:
 
- * Traditional Forms - form-based GET/POST type applications with a variety of injection points and injection types
- * Non-Traditional Forms - forms with payloads that are unusual or nested, usually requiring some tweaks or advanced sqlmap usage to get a simple injection working
- * APIs - API-like interactions which are intended to represent behavior that emulates typical APIs - note that the implementations may not exactly match a real API e.g. our "SOAP" example is not a full SOAP implementation
+ * Stop the running docker compose project
+ * Remove the directory
+ * Start the docker compose project
 
 # Other Resources
 

@@ -1,7 +1,5 @@
 <?php ## Used to draw the top portion of every page ?>
-
 <?php
-
 function do_header($page_title, $page_category) {
     include_once('common/view_source.php');
     echo <<<END
@@ -23,4 +21,3 @@ function do_header($page_title, $page_category) {
 }
 
 ?>
-
