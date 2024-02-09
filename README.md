@@ -71,7 +71,7 @@ Please use the Github issue tracker to report issues with the container, or make
 
 Please *do not* use the issue tracker to ask for help on exploiting SQL injections, such issues will be closed immediately without response. Instead, we would encourage asking your scenario in a community where you are more likely to get many eyeballs, either on Twitter/X or one of the many suitable Discord servers that cover this type of issue. Feel free to reference our project and any specific configurations when asking for help in these other forums.
 
-## To-Do
+# To-Do
 
 These aren't done yet!
 
@@ -96,11 +96,11 @@ Other enhancements (meta)
  * It is good that you put the sqlmap command, but it would be even better if you put some manual hints as well. Like this people will practice their manual skills instead of automated tools.
  * Maybe in some future version there could be a page like in DVWA to change the settings via a drop-down.
 
-## Contributing
+# Contributing
 
 If you'd like to contribute, please fork the repository and create a pull request. If you're planning to put a lot of work in, please raise an issue first so we can talk about it. Thank you!
 
-## Forking
+# Forking
 
 Although you're welcome to fork the project I would prefer if this remains the canonical fork at [https://github.com/h1pmnh/sqli-dojo-docker](https://github.com/h1pmnh/sqli-dojo-docker) so that people can know where to get the most updated set of use cases and features!
 
