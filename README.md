@@ -62,8 +62,8 @@ Docker Containers:
  * [https://github.com/thomaslaurenson/startrek_payroll](https://github.com/thomaslaurenson/startrek_payroll): Simple application with several intentional vulnerabilities
 
 Online Resources (most require registration):
- * [https://tryhackme.com/room/sqlilab](TryHackMe SQL Injection Lab)
- * [https://portswigger.net/web-security/sql-injection](PortSwigger Web Academy)
+ * [TryHackMe SQL Injection Lab](https://tryhackme.com/room/sqlilab)
+ * [PortSwigger Web Academy](https://portswigger.net/web-security/sql-injection)
 
 # Reporting Issues
 
@@ -88,13 +88,19 @@ These aren't done yet!
 
 Other enhancements (meta)
 
-For the challenges, try to mention a goal, for example:
-- List all the users (maybe a flag as hidden user)
-- Discover other tables (maybe putting a kind of flag in another table)
-- Read system file (ex /etc/passwd or a flag)
-- Execute system commands and retrieve the flag
-It is good that you put the sqlmap command, but it would be even better if you put some manual hints as well. Like this people will practice their manual skills instead of automated tools.
+* For the challenges, try to mention a goal, for example:
+  - List all the users (maybe a flag as hidden user)
+  - Discover other tables (maybe putting a kind of flag in another table)
+  - Read system file (ex /etc/passwd or a flag)
+  - Execute system commands and retrieve the flag
+ * It is good that you put the sqlmap command, but it would be even better if you put some manual hints as well. Like this people will practice their manual skills instead of automated tools.
+ * Maybe in some future version there could be a page like in DVWA to change the settings via a drop-down.
 
-I like the concept so far. Maybe in some future version there could be a page like in DVWA to change the settings via a drop-down.
-For example, on one page it tells a user how to 'hide an error message' by setting a param/cookie for silenterror with a value. That could automatically be done in some 'settings' page based on what 'difficulty level' a user has the SQLi Dojo on.
+## Contributing
+
+If you'd like to contribute, please fork the repository and create a pull request. If you're planning to put a lot of work in, please raise an issue first so we can talk about it. Thank you!
+
+## Forking
+
+Although you're welcome to fork the project I would prefer if this remains the canonical fork at [https://github.com/h1pmnh/sqli-dojo-docker](https://github.com/h1pmnh/sqli-dojo-docker) so that people can know where to get the most updated set of use cases and features!
 
