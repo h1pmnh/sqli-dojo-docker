@@ -20,7 +20,7 @@ services:
       - mynetwork
 
   mysql:
-      image: mysql:8
+      image: mysql:8.0
       command: --default-authentication-plugin=caching_sha2_password
       environment:
         MYSQL_ROOT_PASSWORD: root
